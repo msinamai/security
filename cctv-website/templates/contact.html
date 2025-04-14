@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="background-image: url('static/images/download(1).jpeg');background-size: cover;">
+    <header class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/download.jpg') }}" alt="Camera Logo" class="logo-image">
+            <h1 class="logo-text">PRO SECURITY SYSTEMS</h1>
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('login') }}" class="nav-link">Admin</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link home">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form-container" style=   "background-color: wheat;">
+        <section>
+            <h2>Pro Security Systems Contact Us</h2>
+            <form action="{{ url_for('submit_contact') }}" method="post" style="display: flex; flex-direction: column; max-width: 400px; margin: auto;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"  placeholder="your name" style="margin-bottom: 20px;"><br>
+
+                <label for="address">Phone Number:</label>
+                <input type="text" id="address" name="address" placeholder="your phone number" style="margin-bottom: 20px;"><br>
+
+                <label for="national_id">National ID:</label>
+                <input type="text" id="national_id" name="national_id" placeholder="your national id" style="margin-bottom: 20px;"><br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required style="margin-bottom: 20px;"><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="write what you want us to do for you" required style="margin-bottom: 10px;"></textarea><br>
+
+                <button type="submit" style="padding: 10px; background-color: green; color: white; border: none; cursor: pointer;">Submit</button>
+            </form>
+        </section>
+    </div>
+
+
+
+    <footer>
+        <p style="background-color: black; color: white; font-weight: bold; padding: 10px; text-align: center;">
+            Email: msinamai68@gmail.com
+            Phone: +263 771 051 497     <br> <br> &copy; 2025 CCTV Company. All rights reserved.              
+        </p>
+    </footer>
+    <style>
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Background color for the header */
+            padding: 10px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 50px; /* Adjust the height as needed */
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white; /* Text color for the links */
+            font-weight: bold;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .nav-link.home {
+            font-size: 50px;
+        }
+
+        .nav-link:hover {
+            background-color: #ddd; /* Background color on hover */
+            color: black; /* Text color on hover */
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label, input, textarea, button {
+            margin-bottom: 10px;
+            font-style: bold;
+            font-variant-caps: all-petite-caps;
+        }
+
+        .button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+       .button:hover {
+            background-color: #555;
+
+            
+        }
+        
+        /* Background image for the body */
+    
+
+        /* Container for the form */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, textarea, button {
+            margin-bottom: 10px;
+            font: 1em sans-serif;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px;
+            background-color: rgb(63, 35, 139);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(4, 8, 245);
+        }
+    </style>
+
+    
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

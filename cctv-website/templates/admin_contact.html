@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin: 0 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+        .nav-link {
+            text-decoration: none;
+            color: white; /* Text color for the links */
+            font-weight: bold;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .nav-link.home {
+            font-size: 50px;
+        }
+
+        .nav-link:hover {
+            background-color: #ddd; /* Background color on hover */
+            color: black; /* Text color on hover */
+        }
+
+
+
+
+
+
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 8px 12px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">PRO SECURITY SYSTEMS</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('admin_contact') }}" class="nav-link home">Clients</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link">Contact Us</a></li>
+                <li><a href="{{ url_for('login') }}" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Clients Requests</h1>
+    <table style="background-color: wheat;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>National ID</th>
+                <th>Date</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact[0] }}</td>
+                <td>{{ contact[1] }}</td>
+                <td>{{ contact[2] }}</td>
+                <td>{{ contact[3] }}</td>
+                <td>{{ contact[4] }}</td>
+                <td>{{ contact[5] }}</td>
+               
+                <td>
+                    <form action="{{ url_for('delete_contact', national_id=contact[2]) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn">DONE</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

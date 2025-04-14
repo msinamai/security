@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCTV Company</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Background color for the header */
+    padding: 10px 20px;
+}
+
+.logo {
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    color: white;
+   /*background-color: rgb(106, 21, 202); /* Background color for the navbar */
+    margin: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white; /* Text color for the links */
+    font-weight: bold;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+.nav-link.home {
+    font-size: 50px;
+}
+
+.nav-link:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: black; /* Text color on hover */
+}
+.logo-container{
+    color: white;
+
+}
+
+</style>
+<body>
+    
+    <header class="header">
+        <div class="logo-container">
+             <h1 class="logo-text">PRO SECURITY SYSTEMS</h1>
+        </div>
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ url_for('index') }}" class="nav-link home">Home</a></li>
+            <li><a href="{{ url_for('login') }}" class="nav-link">Admin</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link">Contact Us</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div style=" background-color: wheat; background-size: cover;">
+        <h1 style=" color: black; font-weight: bold; padding: 10px; text-align: center;">PRO SECURITY SYSTEMS PORTFOLIO</h1>
+      
+        <b ><p > <h2>Your One-stop shop for electronic Security Installation,Maintenance & Repair such as:</h2> <br><li>Intercoms</li>
+          <li>CCTV</li> <li>Electric Gates Electric fences</li><li>Boom gates</li>
+          <li>refrigeration and air conditioning</li>
+          <li>Alarm systems</li> 
+          <li>automated garrage doors</li> 
+          <li>Solar and borehole pump installation</li>
+          
+        </p></b>
+    
+    <section>
+        <h2>Gallery</h2>
+        <div class="slideshow-container" style="width: fit-content;">
+            <div class="mySlides fade">
+                <p style="background-color: black; color: white; font-weight: bold; padding: 10px; text-align: center;">CCTV CAMERAS AND INTERCOMS</p>
+                <img src="{{ url_for('static', filename='images/10.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/11.jpg') }}" style="width:20%;  height:250px;">
+                <img src="{{ url_for('static', filename='images/12.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/13.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/19.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/15.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/16.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/17.jpg') }}" style="width:20%; height:250px;">
+            </div>
+            <div class="mySlides fade">
+                <p style="background-color: black; color: white; font-weight: bold; padding: 10px; text-align: center;">BOOM GATES AND AUTOMATED GATES</p>
+                <img src="{{ url_for('static', filename='images/5.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/96.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/8.jpg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/0.jpeg') }}" style="width:20%; height:250px;">
+                <img src="{{ url_for('static', filename='images/97.jpg') }}" style="width:20%; height:250px;">
+            
+                <video width="20%" height="250" controls>
+                    <source src="{{ url_for('static', filename='videos/1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="20%" height="250" controls>
+                    <source src="{{ url_for('static', filename='videos/4.1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="20%" height="250" controls>
+                    <source src="{{ url_for('static', filename='videos/5.1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+   
+                     </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+    </section>
+    
+    <section>
+        <p style="background-color: black; color: white; font-weight: bold; padding: 10px; text-align: center;">WORK DONE</p>
+        <img src="{{ url_for('static', filename='images/18.jpg') }}" style="width:20%; height:250px;">
+        <img src="{{ url_for('static', filename='images/15.jpg') }}" style="width:20%; height:250px;">
+        <img src="{{ url_for('static', filename='images/97.jpg') }}" style="width:20%; height:250px;">
+        <img src="{{ url_for('static', filename='images/17.jpg') }}" style="width:20%; height:250px;">
+            
+        <video width="20%" height="250" controls>
+            <source src="{{ url_for('static', filename='videos/20.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video width="20%" height="250" controls>
+            <source src="{{ url_for('static', filename='videos/6.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video width="20%" height="250" controls>
+            <source src="{{ url_for('static', filename='videos/7.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video width="20%" height="250" controls>
+            <source src="{{ url_for('static', filename='videos/8.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <footer>
+        <p style="background-color: black; color: white; font-weight: bold; padding: 10px; text-align: center;">
+            Email: msinamai68@gmail.com
+            Phone: +263 771 051 497     <br> <br> &copy; 2025 CCTV Company. All rights reserved.              
+        </p>
+    </footer>
+</div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

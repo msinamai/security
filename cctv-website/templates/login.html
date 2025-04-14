@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        .navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white; /* Text color for the links */
+            font-weight: bold;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .nav-link.home {
+            font-size: 50px;
+        }
+
+        .nav-link:hover {
+            background-color: #ddd; /* Background color on hover */
+            color: black; /* Text color on hover */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: rgb(80, 17, 196);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(24, 9, 230);
+        }
+    </style>
+</head>
+
+<header class="header">
+    <div class="logo-container">
+        <h1 class="logo-text">PRO SECURITY SYSTEMS</h1>
+    </div>
+<nav>
+    <ul class="navbar">
+        <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+        <li><a href="{{ url_for('login') }}" class="nav-link home">Admin</a></li>
+        <li><a href="{{ url_for('contact') }}" class="nav-link">Contact Us</a></li>
+    </ul>
+</nav>
+</header>
+<body style="background-image: url('static/images/download(1).jpeg');background-size: cover; height: 100%;">
+    <div class="login-container" style="background-color: wheat;">
+        <h2  style="align-items: center;">Admin Login</h2>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+
+
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</div>
+</body>
+
+</html>
